@@ -7,7 +7,7 @@
     <title>Bakery</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
@@ -16,15 +16,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a class="logo" href="#"><i class="fa-solid fa-croissant"></i>The Bakery</a>
+    <header>
+     <nav class="main-nav">
+         <h1><a class="logo" href="#"> <i class="material-icons">breakfast_dining</i> The Bakery</a></h1>
         <ul class="nav-list">
-            <li class="nav-item">About Us</li>
-            <li class="nav-item">What's New</li>
-            <li class="nav-item">Contact</li>
+            <li class="nav-link"><a href="#sectionAboutUs">About Us</li></a>
+            <li class="nav-link"><a href="#sectionWhatsNew">What's New</li></a>
+            <li class="nav-link"><a href="#">Contact</li></a>
         </ul>
-        <button class="btn btn-primary">View Menu</button>
+        <a id="food-menu" href="#">
+            View Menu <i class="material-icons">restaurant_menu</i>      
+        </a>
+        <i class="material-icons hamburger">list</i>     
+    </nav>   
+    <nav class="mobile-nav hidden">
+        <ul class="mobile-nav-list">
+            <li class="nav-link"><a href="#">About Us</li></a>
+            <li class="nav-link"><a href="#section-whatsnew">What's New</li></a>
+            <li class="nav-link"><a href="#">View Menu</li></a>
+            <li class="nav-link"><a href="#">Contact</li></a>
+        </ul>
     </nav>
+    </header>
+    
     <section class="section-hero">
         <div class="section-hero__body">
             <h5>
@@ -35,8 +49,12 @@
             </h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit in aperiam blanditiis nisi sit itaque vitae. Deserunt sit sequi eligendi.</p>
             <div class="btn-group">
-                <button class="btn btn-primary">View Menu</button>
-                <button class="btn btn-primary">Get to know us</button>
+                <a href="#">
+                    <button class="btn btn-primary">View Menu</button>
+                </a>
+                <a class="section-hero__body__know-us" href="#">
+                    Get to know us
+                </a>
             </div>
         </div>
         <div class="section-hero__img">
@@ -44,18 +62,41 @@
         </div>
     </section>
     
-    <section class="section-whatsnew">
+    <section id="sectionWhatsNew" class="section-whatsnew">
         <div class="section-whatsnew__img">
-            <img src="" alt="">
+            <img src="images/nutellacroissant.jpg" alt="">
         </div>
         <div class="section-whatsnew__body">
-            <h4>What's New?</h4>
-            <h3>Take a look at what's new in our bakery!</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti eligendi dicta voluptatibus voluptatem nobis quidem nemo! Similique qui esse repellendus?</p>
-        <button class="btn btn-primary">Read More</button>
+            <h3>What's New?</h3>
+            <h4>Take a look at what's new in our bakery!</h4>
+            <p>Yum yum! Our new, deliciously buttery croissants filled with nutella. Flakey with chocolate ooze! </p>
+        <div class="btn-group">
+            <a href="#">
+                <button class="btn btn-primary">Read More</button>
+            </a>
+        </div>
         </div>
     </section>
 
+    <section id="sectionAboutUs" class="section-about-us">
+        <div class="section-about-us__body">
+            <h6>
+                About Us
+            </h6>
+            <h2>
+                Our Story
+            </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit in aperiam blanditiis nisi sit itaque vitae. Deserunt sit sequi eligendi.</p>
+            <div class="btn-group">
+                <a href="#">
+                    <button class="btn btn-primary">View Menu</button>
+                </a>
+            </div>
+        </div>
+        <div class="section-about-us__img">
+            <img src="images/baker.jpg" alt="">
+        </div> 
+    </section>
     <script src="js/main.js"></script>
 </body>
 </html>
