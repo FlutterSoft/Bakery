@@ -8,6 +8,7 @@ mobileLinks.forEach( link => link.addEventListener('click', toggleMenu))
 
 function toggleMenu(){
     nav.classList.toggle('blur')
+    mobileNav.classList.toggle('blur')
     mobileNav.classList.toggle('hidden')
 }
 
