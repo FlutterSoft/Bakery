@@ -90,7 +90,7 @@ nav{
     transition: all 1s;
 }
 
-.nav-link:before{
+.desktop-nav-link:before{
     content: '';
     display: block;
     height: 1px;
@@ -105,7 +105,7 @@ nav{
     margin: auto;
     opacity: 75%;
 }
-.nav-link:hover::before, .nav-link:focus::before {
+.desktop-nav-link:hover::before, .desktop-nav-link:focus::before {
     transform: scale(1,1);
   }
 
