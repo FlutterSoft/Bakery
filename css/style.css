@@ -1,10 +1,14 @@
 /* Box Model Hack */
 *{
     box-sizing: border-box;
-    
   }
 
-/* COLOURS */
+
+/* 
+    -----------------
+        Colours 
+    -----------------
+*/
 :root{
     --clr-primary: #ff8999;
     --clr-accent: #ffedf1;
@@ -15,6 +19,13 @@
     --ff-body: 'Playfair Display', serif;
 }
 
+
+/* 
+    -----------------
+       Base Styling
+        Typography 
+    -----------------
+*/
 html {
     font-family: var(--ff-body);
     font-weight: 400;
@@ -36,6 +47,11 @@ h1{
     font-size: 1.9rem;
 }
 
+nav h1{
+    margin-bottom: 0;
+    padding: 0;
+}
+
 h2{
     font-size: 3rem;
 }
@@ -55,20 +71,57 @@ h6{
 p{
     font-size: 1.1rem;
 }
+
+
+
 img{
     max-width: 100%;
     max-height: 35em;
 }
 
+a{
+    color: var(--clr-black);
+    text-decoration: none;
+}
+
+
+/* 
+    -----------------
+      Helper Classes 
+    -----------------
+*/
 .text-primary{
     color: var(--clr-primary)
 }
 
-nav h1{
-    margin-bottom: 0;
-    padding: 0;
+.hidden{
+    opacity: 0 !important;
+}
+.blur{
+    backdrop-filter: blur(12px);
+    transition: all 400ms;
 }
 
+
+.line{
+    border-top: 2px solid var(--clr-accent);
+    margin-bottom: 2em;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    right: 25%;
+}
+
+.center {
+    text-align: center;
+}
+
+
+/* 
+    -----------------
+        Navigation 
+    -----------------
+*/
 nav{
     position: fixed;
     top:0;
@@ -81,12 +134,12 @@ nav{
 
 }
 
-
 .main-nav{
-
     z-index: 99;
 }
 
+
+/* Mobile Navigation */
 .mobile-nav{
     display: flex;
     flex-direction: column;
@@ -98,13 +151,35 @@ nav{
     margin-bottom: 5em;
     padding-bottom: 5em;
     font-size: 1.9em;
-    transition: all 1s;
+    transition: all 400ms;
     background-image: linear-gradient(90deg, #ffedf19a, #ffffff5f);
     /* backdrop-filter: blur(12px); */
     z-index: 20;
-
 }
 
+.mobile-nav li{
+    margin-bottom: 1em;
+}
+
+.nav-list, #food-menu{
+    display:none;
+    transition: all 200ms ease-in-out;
+}
+
+nav h1{
+    justify-self: center;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    margin-right: 0.5em;
+    text-align: right;
+    cursor: pointer;
+    font-size: 50px !important;
+}
+
+
+/* Line when hover over nav link */
 .desktop-nav-link:before{
     content: '';
     display: block;
@@ -124,45 +199,32 @@ nav{
     transform: scale(1,1);
   }
 
-.hidden{
-    display:none;
-}
-.blur{
-    backdrop-filter: blur(12px);
-}
-.mobile-nav li{
-    margin-bottom: 1em;
-}
-
-.nav-list, #food-menu{
-    display:none;
-    transition: opacity 200ms ease-in-out;
-
-}
 
 .logo:hover, .logo:focus, #food-menu:hover, #food-menu:focus{
     opacity: 70%;
     transition: opacity 200ms ease-in-out;
-
 }
 
-.hamburger {
-    margin-right: 0.5em;
-    text-align: right;
-    cursor: pointer;
-    font-size: 50px !important;
-}
-
-
-nav h1{
-    justify-self: center;
-}
 .logo{
     color: #1b1b1b;
     transition: opacity 200ms ease-in-out;
 }
 
+.small-link{
+    margin-left: 1em;
+    transition: opacity 200ms ease-in-out;
+}
+.small-link:hover, .small-link:focus{
+    opacity: 65%;
+    transition: opacity 200ms ease-in-out;
+}
 
+
+/* 
+    -----------------
+        Sections/Layout 
+    -----------------
+*/
 section{
     padding: 8em 2em;
 }
@@ -188,12 +250,6 @@ section{
 
 .section-contact{
     background-image: linear-gradient(180deg, var(--clr-accent), var(--clr-accent));
-
-}
-
-a{
-    color: var(--clr-black);
-    text-decoration: none;
 }
 
 .section-whatsnew, .section-contact, .section-contact__body{
@@ -210,110 +266,6 @@ a{
     justify-content: center;
 }
 
-footer{
-    background-color: var(--clr-secondary);
-    padding: 3em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-footer .line{
-    margin-bottom: 0;
-
-}
-footer a:hover, footer a:focus{
-    text-decoration: underline;
-    text-decoration-color: rgba(0, 0, 0, 0.251);
-    text-decoration-thickness: 0.5px;
-}
-
-.section-hero__body,
-.section-hero__img,
-.section-whatsnew__img,
-.section-whatsnew__body,
-.section-about-us__body,
-.section-about-us__img,
-.section-menu__items__img,
-.section-menu__items__body,
-.section-contact__header,
-.section-contact__body
-{
-    max-width: 35rem;
-}
-
-
-/* Components */
-/* Buttons */
-
-.btn-group{
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin: 2em 0;
-    align-items: center;
-}
-.btn-group a{
-    text-decoration: none;
-}
-
-.btn{
-    padding: 1em 3em;
-    color: white;
-    border: none;
-    border-radius: 0.2em;
-    cursor: pointer;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.116);
-
-}
-.btn:hover, .btn:focus{
-    opacity: 80%;
-}
-
-.btn-primary{
-    background-color: var(--clr-primary);
-}
-
-.line{
-    border-top: 2px solid var(--clr-accent);
-    margin-bottom: 2em;
-    width: 50%;
-    position: relative;
-    left: 25%;
-    right: 25%;
-}
-
-
-/* FORMS */
-.form-container{
-    margin-right: 1em;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    width: 14em;
-    max-width: 90%;
-    
-}
-input{
-    border: none;
-    outline: 2px solid var(--clr-accent);
-    border-radius: 1px;
-    padding: 0.5em;
-    
-}
-input:focus, textarea:focus{
-    outline: 1.5px solid var(--clr-primary);
-}
-textarea{
-    height: 8em;
-    border: none;
-    outline: 2px solid var(--clr-accent);
-    border-radius: 1px;
-    resize: none;
-    padding: 0.5em;
-}
-
-
 
 .section-contact__body{
     background-color: var(--clr-white);
@@ -325,20 +277,7 @@ textarea{
     
 }
 
-
-.section-hero__body__know-us{
-    margin-left: 1em;
-    transition: opacity 200ms ease-in-out;
-}
-.section-hero__body__know-us:hover, .section-hero__body__know-us:focus{
-    opacity: 65%;
-    transition: opacity 200ms ease-in-out;
-}
-
-.center {
-    text-align: center;
-}
-
+/* BAKERY MENU */
 .section-menu{
     display: flex;
     flex-direction: column;
@@ -373,8 +312,122 @@ textarea{
 }
 
 
+
+/* FOOTER */
+footer{
+    background-color: var(--clr-secondary);
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+footer .line{
+    margin-bottom: 0;
+
+}
+footer a:hover, footer a:focus{
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.251);
+    text-decoration-thickness: 0.5px;
+}
+
+/* Max Width */
+.section-hero__body,
+.section-hero__img,
+.section-whatsnew__img,
+.section-whatsnew__body,
+.section-about-us__body,
+.section-about-us__img,
+.section-menu__items__img,
+.section-menu__items__body,
+.section-contact__header,
+.section-contact__body
+{
+    max-width: 35rem;
+}
+
+
+
+/* 
+    -----------------
+       COMPONENTS
+        BUTTONS
+    -----------------
+*/
+
+.btn-group{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 2em 0;
+    align-items: center;
+}
+.btn-group a{
+    text-decoration: none;
+}
+
+.btn{
+    padding: 1em 3em;
+    color: white;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.116);
+}
+
+.btn:hover, .btn:focus{
+    opacity: 80%;
+}
+
+.btn-primary{
+    background-color: var(--clr-primary);
+}
+
+
+/* 
+    -----------------
+      CONTACT FORM
+    -----------------
+*/
+.form-container{
+    margin-right: 1em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 14em;
+    max-width: 90%;
+    
+}
+input{
+    border: none;
+    outline: 2px solid var(--clr-accent);
+    border-radius: 1px;
+    padding: 0.5em;
+    
+}
+input:focus, textarea:focus{
+    outline: 1.5px solid var(--clr-primary);
+}
+textarea{
+    height: 8em;
+    border: none;
+    outline: 2px solid var(--clr-accent);
+    border-radius: 1px;
+    resize: none;
+    padding: 0.5em;
+}
+
+
+/* 
+    -----------------
+     MEDIA QUERIES
+    -----------------
+*/
+/* For Larger Tablet/Desktop Screens */
 @media screen and (min-width: 800px){
 
+    /* NAV */
     header {
         display: flex;
         justify-content: center;
@@ -390,7 +443,6 @@ textarea{
         /* text-align: center; */
         max-width: 70rem;
     }
-
     .mobile-nav{
         display: none;
     }
@@ -423,7 +475,5 @@ textarea{
     .menu-item{
         flex-direction: row;
         gap: 4em;
-
     }
-    
 }
