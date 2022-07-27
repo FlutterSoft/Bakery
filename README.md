@@ -1,4 +1,4 @@
-# Drone.
+# Bakery.
 Website HTML/CSS/JS practise. Written from scratch. Based on a dribbble design. Fully responsive.
 
 **Link to project:** https://fakebakery.netlify.app/
